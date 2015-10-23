@@ -10,28 +10,28 @@
      
     function preload() {
       // load image
-      bg = loadImage("../assets/nyc.jpg");
-      ufo = loadImage("../assets/ufo.png");
+      bg = loadImage("../assets/pool.jpg");
+      ufo = loadImage("../assets/girll.png");
     }
     
     function setup() 
     {  
       // hide mouse cursor
       noCursor();
-      createCanvas(bg.width/4, bg.height/4);
+      createCanvas(bg.width/2, bg.height/2);
     }
      
     function draw() 
     {
       
       // display background image
-      image(bg, 0, 0, bg.width/4, bg.height/4)
+      image(bg, 0, 0, bg.width/2, bg.height/2)
       //or I could have done: background(bg);
       
       // center the ufo to the cursor
       imageMode(CENTER);
       // display ufo
-      image(ufo, mouseX, mouseY,ufo.width/5,ufo.height/5);
+      image(ufo, mouseX, mouseY,ufo.width/2,ufo.height/2);
 
       //shoot lasers when the mouse is down
       if(mouseIsPressed){

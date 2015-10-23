@@ -23,11 +23,7 @@ function draw(){
 	clear();
 
 	background(img0);
-	//blend(srcImage,sx,sy,sw,sh,dx,dy,dw,dh,blendMode)
-	//other blend modes you can try:
-  //BLEND | DARKEST | LIGHTEST | DIFFERENCE | MULTIPLY| EXCLUSION | SCREEN 
-  //REPLACE | OVERLAY | HARD_LIGHT | SOFT_LIGHT | DODGE | BURN | ADD | NORMAL
-  blend(img1, 0, 0, img1.width, img1.height, mouseX, 0, img1.width, img1.height, DARKEST);
+	blend(bg,0,0,bg.width,bg.height,mouseX-20,mouseY-30,bg.width, bg.height, MULTIPLY);
 }
   </script>
 </head>

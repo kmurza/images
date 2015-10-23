@@ -7,27 +7,53 @@
   <script>
 
   //declare your images as a global variable
- 
+  var bg, girl, pink, invertImage;
 
 	function preload(){
 
 		// Load the image
+		bg = loadImage("../assets/pool.jpg");
+      	girl = loadImage("../assets/girll.png");
+      	pink = loadImage("../assets/pink.png");
+      	invertImage = loadImage("../assets/pool.jpg");
 	}
-
 
 	function setup() {
 
-	  //set up your canvas
-
+	  	//set up your canvas + hide mouse cursor
+	  	noCursor();
+      	createCanvas(bg.width/2, bg.height/2);
+      	//invert the pool
+		invertImage.filter(INVERT);
+    
+    
+	 bg.filter(GRAY); 
 	}
+
 
 	function draw() {
 
-		//draw
+	  	//draw + show the background pic
+		image(bg, 0, 0, bg.width/2, bg.height/2) 
+		// center girl with the mouse
+      	imageMode(CENTER);
+      	image(girl, mouseX, mouseY,girl.width/2,girl.height/2);
 
-	}
+	//change outfit when mouse is pressed
+      	if(mouseIsPressed){
+        if(mouseX > windowWidth/2){
+        image(pink, mouseX, mouseY,girl.width/2,girl.height/2);
+        } else{
+         image(pink,mouseX,mouseY,girl.width/2,girl.height/2);
+        }
+      } 
+      	
+      	
+		blend(girl,1,0,girl.width,girl.height,mouseX-20,mouseY-20,girl.width, girl.height, MULTIPLY);
+}
 
-	</script>
+   
+</script>
 </head>
 
 <body>
